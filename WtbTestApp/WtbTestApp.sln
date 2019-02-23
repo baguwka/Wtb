@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WtbTestApp", "WtbTestApp\WtbTestApp.csproj", "{EF4A3EDA-DB9C-4CFE-A63C-741225A41216}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{67399558-8135-4610-8287-EAB55C736106}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WtbTestApp.Testing", "..\Tests\WtbTestApp.Testing\WtbTestApp.Testing.csproj", "{D4E9E778-8305-429F-A836-83512976D1BD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EF4A3EDA-DB9C-4CFE-A63C-741225A41216}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF4A3EDA-DB9C-4CFE-A63C-741225A41216}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF4A3EDA-DB9C-4CFE-A63C-741225A41216}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF4A3EDA-DB9C-4CFE-A63C-741225A41216}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4E9E778-8305-429F-A836-83512976D1BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4E9E778-8305-429F-A836-83512976D1BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4E9E778-8305-429F-A836-83512976D1BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4E9E778-8305-429F-A836-83512976D1BD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D4E9E778-8305-429F-A836-83512976D1BD} = {67399558-8135-4610-8287-EAB55C736106}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {98D422A6-428E-4D80-83A0-915F2FFEFD86}
+	EndGlobalSection
+EndGlobal
