@@ -1,13 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Moment from 'moment';
+import './index.css';
+import CurrencyPairSelect from './CurrencyPair';
+import CurrencyTable from './CurrencyTable';
+import 'bootstrap/dist/css/bootstrap.css';
 
-class CurrencyTable extends React.Component{
+class App extends React.Component{
     constructor(props){
         super(props);
         this.state = {
             error: null,
+            date: null,
+            items: [],
             isLoaded: false,
-            items: []
         };
     }
 
@@ -17,8 +23,10 @@ class CurrencyTable extends React.Component{
             .then(result => {
                 this.setState({
                     isLoaded: true,
-                    items: result.currencies
-                })
+                    items: result.currencies,
+                    date: result.date,
+                    name: result.name
+                });
             },
             (error) => {
                 this.setState({
@@ -30,22 +38,25 @@ class CurrencyTable extends React.Component{
     }
     
     render() {
-        const {error, isLoaded, items} = this.state;
+        const {error, isLoaded, items, date, name} = this.state;
+
         if (error){
-            return <div>Error: {error.message}</div>;
+            return <div>Ошибка: {error.message}</div>;
         }
         else if (!isLoaded){
-            return <div>Loading...</div>;
+            return <div>Загрузка...</div>;
         }
         else{
+            var dateFormatted = Moment(date).format("YYYY-MM-DD");
             return (
-                <ul>
-                    {items.map(item => (
-                        <li key={item.id}>
-                            {item.code} {item.value}
-                        </li>
-                    ))}
-                </ul>
+                <div className="container">
+                    <div>
+                        <h6>Информация актуальна на: {dateFormatted}</h6>
+                    </div>
+
+                    <CurrencyPairSelect items={items}/>
+                    <CurrencyTable items={items} name={name}/>
+                </div>
             );
         }
     }
@@ -54,6 +65,6 @@ class CurrencyTable extends React.Component{
 // ========================================
 
 ReactDOM.render(
-  <CurrencyTable />,
+  <App />,
   document.getElementById('root')
 );
