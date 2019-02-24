@@ -21,7 +21,7 @@
 
 ### С помощью dotnet
 1. Открыть cmd в директории проекта \WtbTestApp\WtbTestApp
-2. dotnet publish -c Release -o C:\server_bin
+2. `dotnet publish -c Release -o C:\server_bin`
 3. Открыть директорию, в которую был развернут проект, скопировать все содержимое в путь, указанный как физическое расположение веб-сайта при создании веб-сайта IIS
 При условии, что физический путь веб-сайта C:\server_bin
 
@@ -54,6 +54,8 @@
  Адрес должен соответствовать запущенной в первом пункте службе (asp.net web api 2)
 
 2. Выполнить следующие команды в cmd
+```bash
 	cd \react-page\get-currency
 	npm i
 	npm start
+```
