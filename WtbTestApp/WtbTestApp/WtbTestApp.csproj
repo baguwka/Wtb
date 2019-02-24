@@ -85,8 +85,11 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApiWrapper\Model\CbCurrencyResponseRestModel.cs" />
-    <Compile Include="ApiWrapper\Model\CbCurrencyRestModel.cs" />
+    <Compile Include="ApiWrapper\DefaultCbApiWrapper.cs" />
+    <Compile Include="ApiWrapper\Model\CbCurrencyJsonModel.cs" />
+    <Compile Include="ApiWrapper\Model\CbCurrencyJsonResponseModel.cs" />
+    <Compile Include="ApiWrapper\Model\CbCurrencyXmlResponseModel.cs" />
+    <Compile Include="ApiWrapper\Model\CbCurrencyXmlModel.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="ApiWrapper\ICbApiWrapper.cs" />
     <Compile Include="Controllers\CurrencyController.cs" />

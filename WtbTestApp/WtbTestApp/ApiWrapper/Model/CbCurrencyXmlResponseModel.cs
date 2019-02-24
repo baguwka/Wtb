@@ -4,7 +4,7 @@ using System.Xml.Serialization;
 namespace WtbTestApp.ApiWrapper.Model
 {
     [XmlRoot("ValCurs")]
-    public class CbCurrencyResponseRestModel
+    public class CbCurrencyXmlResponseModel
     {
         [XmlIgnore]
         public DateTime Date { get; set; }
@@ -19,6 +19,8 @@ namespace WtbTestApp.ApiWrapper.Model
         public string Name { get; set; }
 
         [XmlElement("Valute")]
-        public CbCurrencyRestModel[] Items { get; set; }
+        public CbCurrencyXmlModel[] Items { get; set; }
+
+        public CbCurrencyJsonResponseModel ToJsonModel() => new CbCurrencyJsonResponseModel(this);
     }
 }

@@ -4,7 +4,7 @@ using System.Xml.Serialization;
 namespace WtbTestApp.ApiWrapper.Model
 {
     [XmlRoot("Valute")]
-    public class CbCurrencyRestModel
+    public class CbCurrencyXmlModel
     {
         [XmlAttribute("ID")]
         public string Id { get; set; }
@@ -43,6 +43,11 @@ namespace WtbTestApp.ApiWrapper.Model
                 var formatted = value.Replace(",", CultureInfo.InvariantCulture.NumberFormat.NumberDecimalSeparator);
                 Value = decimal.Parse(formatted, NumberStyles.Any, CultureInfo.InvariantCulture);
             }
+        }
+
+        public CbCurrencyJsonModel ToJsonModel()
+        {
+            return new CbCurrencyJsonModel(this);
         }
     }
 }
