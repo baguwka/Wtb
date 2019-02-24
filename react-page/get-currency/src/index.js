@@ -12,7 +12,7 @@ class CurrencyTable extends React.Component{
     }
 
     componentDidMount(){
-        fetch("http://localhost:8080/api/GetCurrency")
+        fetch("/api/GetCurrency")
             .then(response => response.json())
             .then(result => {
                 this.setState({
@@ -48,11 +48,12 @@ class CurrencyTable extends React.Component{
                 </ul>
             );
         }
+    }
 }
 
 // ========================================
 
 ReactDOM.render(
-  <Game />,
+  <CurrencyTable />,
   document.getElementById('root')
 );
