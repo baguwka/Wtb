@@ -1,4 +1,5 @@
 ﻿using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace WtbTestApp.RestProvider
@@ -25,7 +26,8 @@ namespace WtbTestApp.RestProvider
                 };
             }
 
-            var content = await message.Content.ReadAsStringAsync();
+            var byteArray = await message.Content.ReadAsByteArrayAsync();
+            var content = Encoding.GetEncoding("windows-1251").GetString(byteArray, 0, byteArray.Length);
 
             return new ServerResponse
             {
