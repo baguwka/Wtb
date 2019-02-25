@@ -6,8 +6,8 @@ class CurrencyPairSelect extends React.Component{
         super(props);
         this.state = {
             items: props.items,
-            pair_1_selected: props.items[0],
-            pair_2_selected: props.items[1],
+            pair_1_selected: props.items.find(i => i.code === "EUR"),
+            pair_2_selected: props.items.find(i => i.code === "USD"),
         }
     }
 
@@ -34,12 +34,16 @@ class CurrencyPairSelect extends React.Component{
         return (
             <div>
                 <h3 className="heading">Валютная пара</h3>
-                <select id="pair_1" onChange={this.onPair_1Change.bind(this)}>
+                <select id="pair_1" 
+                    defaultValue={pair_1_selected.id}
+                    onChange={this.onPair_1Change.bind(this)}>
                     {items.map(item => (
                         <option key={item.id} value={item.id}>{item.name}</option>    
                     ))}
                 </select>
-                <select id="pair_2" onChange={this.onPair_2Change.bind(this)}>
+                <select id="pair_2" 
+                    defaultValue={pair_2_selected.id}
+                    onChange={this.onPair_2Change.bind(this)}>
                     {items.map(item => (
                         <option key={item.id} value={item.id}>{item.name}</option>    
                     ))}
